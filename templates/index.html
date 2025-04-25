@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhD Reaction App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; font-family: Arial, sans-serif; }
+        .container { max-width: 400px; margin-top: 100px; }
+        .card { border: none; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .btn-primary { background-color: #007bff; border-color: #007bff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card p-4">
+            <h1 class="text-center mb-4">PhD Reaction Analysis</h1>
+            <form method="POST" action="/login">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
