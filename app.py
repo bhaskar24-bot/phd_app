@@ -22,7 +22,7 @@ def home():
 @app.route('/login', methods=['POST'])
 def login():
     username = request.form['username']
-    return render_template('index.html')
+    return render_template('index.html', username=username)
 
 @app.route('/yield')
 def yield_page():
@@ -31,10 +31,14 @@ def yield_page():
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.form['data']
-    # Simple mock prediction (replace with real logic later)
+    # Simple mock prediction with validation
     try:
-        predicted_yield = float(data) * 1.1  # Mock: increase by 10%
-        result = f"Predicted yield: {predicted_yield:.2f}%"
+        value = float(data)
+        if value <= 0:
+            result = "Error: Yield data must be positive."
+        else:
+            predicted_yield = value * 1.1  # Mock: increase by 10%
+            result = f"Predicted yield: {predicted_yield:.2f}%"
     except ValueError:
         result = "Error: Please enter a valid number for yield data."
 
